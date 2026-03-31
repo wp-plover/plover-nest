@@ -1,0 +1,10 @@
+{
+    "version": "1.0.0",
+    "name": "plover/plover-nest",
+    "autoload": {
+        "psr-4": {
+            "PloverNest\\": "src/"
+        }
+    },
+    "require": {}
+}
