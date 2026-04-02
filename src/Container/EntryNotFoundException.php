@@ -1,6 +1,6 @@
 <?php
 
-namespace PloverNest\Container;
+namespace Plover\Nest\Container;
 
 use Exception;
 use Psr\Container\NotFoundExceptionInterface;

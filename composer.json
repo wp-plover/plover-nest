@@ -6,7 +6,7 @@
         "container",
         "service provider"
     ],
-    "homepage": "https://github.com/wp-plover/plover-nest",
+    "homepage": "https://wpplover.com/",
     "license": "MIT",
     "authors": [
         {
@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "PloverNest\\": "src/"
+            "Plover\\Nest\\": "src/"
         }
     },
     "require": {

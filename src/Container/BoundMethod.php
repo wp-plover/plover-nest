@@ -1,6 +1,6 @@
 <?php
 
-namespace PloverNest\Container;
+namespace Plover\Nest\Container;
 
 /**
  * @since 1.0.0

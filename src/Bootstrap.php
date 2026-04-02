@@ -1,6 +1,6 @@
 <?php
 
-namespace PloverNest;
+namespace Plover\Nest;
 
 /**
  * Plover Nest framework bootstrapper

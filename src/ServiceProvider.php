@@ -1,6 +1,6 @@
 <?php
 
-namespace PloverNest;
+namespace Plover\Nest;
 
 /**
  * @since 1.0.0
