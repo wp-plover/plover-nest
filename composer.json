@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "type": "library",
-    "name": "plover/plover-nest",
+    "name": "plover/nest",
     "autoload": {
         "psr-4": {
             "PloverNest\\": "src/"
