@@ -24,7 +24,7 @@ class Bootstrap {
 	/**
 	 * Nest instance.
 	 *
-	 * @var Nest
+	 * @var \Plover\Nest\Nest
 	 */
 	protected $nest;
 
@@ -35,18 +35,12 @@ class Bootstrap {
 	 * @param $base_path
 	 * @param $base_url
 	 */
-	protected function __construct() {
+	public function __construct() {
 		// Create new nest framework instance
-		$this->nest = new Nest();
-	}
-
-	/**
-	 * @param $providers
-	 *
-	 * @return Bootstrap
-	 */
-	public static function make( $providers = [] ) {
-		return ( new static() )->withProviders( $providers );
+		$this->nest = Nest::get_instance();
+		if ( ! $this->nest ) {
+			$this->nest = new Nest();
+		}
 	}
 
 	/**
