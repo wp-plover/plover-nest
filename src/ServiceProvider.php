@@ -3,6 +3,10 @@
 namespace Plover\Nest;
 
 /**
+ * @property array $bindings
+ * @property array $singletons
+ * @property array $aliases
+ * 
  * @since 1.0.0
  */
 abstract class ServiceProvider {
@@ -79,7 +83,7 @@ abstract class ServiceProvider {
 		while ( $index < count( $this->booting_callbacks ) ) {
 			$this->nest->call( $this->booting_callbacks[ $index ] );
 
-			$index ++;
+			$index++;
 		}
 	}
 
@@ -94,7 +98,7 @@ abstract class ServiceProvider {
 		while ( $index < count( $this->booted_callbacks ) ) {
 			$this->nest->call( $this->booted_callbacks[ $index ] );
 
-			$index ++;
+			$index++;
 		}
 	}
 
