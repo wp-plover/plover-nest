@@ -1,13 +1,15 @@
 <?php
 
-namespace Plover\Nest;
+namespace Plover\Nest\Support;
+
+use Plover\Nest\Nest;
 
 /**
  * @property array $bindings
  * @property array $singletons
  * @property array $aliases
  * 
- * @since 1.0.0
+ * @since 1.1.0
  */
 abstract class ServiceProvider {
 

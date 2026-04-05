@@ -3,7 +3,7 @@
 namespace Plover\Nest;
 
 use Plover\Nest\Container\Container;
-use Plover\Nest\ServiceProvider;
+use Plover\Nest\Support\ServiceProvider;
 
 /**
  * @since 1.0.0
@@ -27,7 +27,7 @@ class Nest extends Container {
 	/**
 	 * All the registered service providers.
 	 *
-	 * @var array<string, \Plover\Nest\ServiceProvider>
+	 * @var array<string, \Plover\Nest\Support\ServiceProvider>
 	 */
 	protected $service_provides = [];
 
@@ -77,6 +77,8 @@ class Nest extends Container {
 
 		$this->instance( Nest::class, $this );
 		$this->instance( Container::class, $this );
+
+		\Plover\Nest\Support\Facade::setContainer( $this );
 	}
 
 	/**
@@ -96,7 +98,7 @@ class Nest extends Container {
 	 * @param $provider
 	 * @param $force
 	 *
-	 * @return \Plover\Nest\ServiceProvider
+	 * @return \Plover\Nest\Support\ServiceProvider
 	 */
 	public function register( $provider, $force = false ) {
 		if ( ( $registered = $this->get_provider( $provider ) ) && ! $force ) {
@@ -153,7 +155,7 @@ class Nest extends Container {
 	 *
 	 * @param $provider
 	 *
-	 * @return \Plover\Nest\ServiceProvider|null
+	 * @return \Plover\Nest\Support\ServiceProvider|null
 	 */
 	public function get_provider( $provider ) {
 		$name = is_string( $provider ) ? $provider : get_class( $provider );
@@ -166,7 +168,7 @@ class Nest extends Container {
 	 *
 	 * @param string $provider
 	 *
-	 * @return \Plover\Nest\ServiceProvider
+	 * @return \Plover\Nest\Support\ServiceProvider
 	 */
 	protected function resolve_provider( $provider ) {
 		return new $provider( $this );
@@ -175,7 +177,7 @@ class Nest extends Container {
 	/**
 	 * Mark the given provider as registered.
 	 *
-	 * @param \Plover\Nest\ServiceProvider $provider
+	 * @param \Plover\Nest\Support\ServiceProvider $provider
 	 *
 	 * @return void
 	 */
